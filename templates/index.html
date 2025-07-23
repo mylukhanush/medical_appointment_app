@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to the Medical Appointment System</h1>
+    <p class="lead">Book and manage your medical appointments with ease.</p>
+    <hr class="my-4">
+    <p>Please log in or sign up to continue.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
+    <a class="btn btn-secondary btn-lg" href="{{ url_for('signup') }}" role="button">Sign Up</a>
+</div>
+{% endblock %}</title>
+</head>
+<body>
+
+</body>
+</html>

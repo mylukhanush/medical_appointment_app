@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% extends 'base.html' %}
+
+{% block title %}My Appointments{% endblock %}
+
+{% block content %}
+<h2>Book an Appointment</h2>
+<form method="POST" action="{{ url_for('book_appointment') }}">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="reason" class="form-label">Reason for Appointment</label>
+            <textarea class="form-control" id="reason" name="reason" rows="3" required></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Book Appointment</button>
+</form>
+
+<hr>
+
+<h3>My Booked Appointments</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time }}</td>
+            <td>{{ appointment.reason }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %} </title>
+</head>
+<body>
+
+</body>
+</html>
